@@ -2,6 +2,6 @@ groups:
 - name: test
   rules:
   - record: foo
-    expr: sum(foo) > 0
+    expr: sum(foo)
   - record: broken
     expr: rate(foo)
