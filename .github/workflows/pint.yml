@@ -16,11 +16,11 @@ jobs:
 
       - uses: actions/checkout@v3
         with:
-          ref: ${{ env.GITHUB_REF_NAME }}
           fetch-depth: 0
 
       - name: Run pint
         run: |
+          git checkout ${{ env.GITHUB_REF_NAME }}
           curl -sLo pint.tar.gz https://github.com/cloudflare/pint/releases/download/v0.24.0/pint-0.24.0-linux-x86_64.tar.gz
           tar -xf pint.tar.gz
           ./pint-linux-amd64 --log-level=debug ci
