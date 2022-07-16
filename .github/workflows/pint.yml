@@ -9,6 +9,10 @@ jobs:
   pint:
     runs-on: ubuntu-latest
     steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.4
+  
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
@@ -20,7 +24,7 @@ jobs:
 
       - name: Run pint
         run: |
-          git checkout ${{ env.GITHUB_REF_NAME }}
+          git checkout ${{ steps.branch-name.outputs.current_branch }}
           curl -sLo pint.tar.gz https://github.com/cloudflare/pint/releases/download/v0.24.0/pint-0.24.0-linux-x86_64.tar.gz
           tar -xf pint.tar.gz
           ./pint-linux-amd64 --log-level=debug ci
