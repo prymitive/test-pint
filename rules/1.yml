@@ -4,4 +4,4 @@ groups:
   - record: foo
     expr: sum(foo)
   - record: broken
-    expr: rate(foox)
+    expr: rate(foo[10m]) > 0
