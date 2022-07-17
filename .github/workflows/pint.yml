@@ -9,19 +9,24 @@ jobs:
   pint:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: 1.18.4
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.4
 
       - uses: actions/checkout@v3
         with:
+          ref: prymitive-patch-1
           fetch-depth: 0
 
       - name: Run pint
         run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard
+          git checkout prymitive-patch-1
           curl -sLo pint.tar.gz https://github.com/cloudflare/pint/releases/download/v0.24.0/pint-0.24.0-linux-x86_64.tar.gz
           tar -xf pint.tar.gz
-          ./pint-linux-amd64 ci
+          ./pint-linux-amd64 --log-level=debug ci
         env:
           GITHUB_AUTH_TOKEN: ${{ github.token }}
+          GITHUB_PULL_REQUEST_NUMBER: 2
