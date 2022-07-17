@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run pint
-        uses: prymitive/pint-action@v0.5-rc2
+        uses: prymitive/pint-action@v0.5-rc3
         with:
           token: ${{ github.token }}
           workdir: 'rules'
