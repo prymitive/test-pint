@@ -1,6 +1,7 @@
 
 ci {
   baseBranch = "main"
+  include    = ["rules/.*"]
 }
 
 repository {
