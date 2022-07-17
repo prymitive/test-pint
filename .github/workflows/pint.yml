@@ -29,3 +29,4 @@ jobs:
           ./pint-linux-amd64 --log-level=debug ci
         env:
           GITHUB_AUTH_TOKEN: ${{ github.token }}
+          GITHUB_PULL_REQUEST_NUMBER: 2
