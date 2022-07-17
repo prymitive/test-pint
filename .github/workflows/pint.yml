@@ -15,14 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run pint
-        run: |
-          git fetch origin main
-          git checkout main
-          git reset --hard
-          git checkout ${GITHUB_HEAD_REF}
-          curl -sLo pint.tar.gz https://github.com/cloudflare/pint/releases/download/v0.24.0/pint-0.24.0-linux-x86_64.tar.gz
-          tar -xf pint.tar.gz
-          ./pint-linux-amd64 --log-level=debug ci
-        env:
-          GITHUB_AUTH_TOKEN: ${{ github.token }}
-          GITHUB_PULL_REQUEST_NUMBER: ${{ github.event.number }}
+        uses: prymitive/pint-action@v0.3
+        with:
+          token: ${{ github.token }}
+          workdir: 'rules'
