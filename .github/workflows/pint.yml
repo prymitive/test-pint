@@ -24,7 +24,7 @@ jobs:
 
       - name: Run pint
         run: |
-          git fetch main
+          git fetch origin
           git checkout ${{ steps.branch-name.outputs.current_branch }}
           curl -sLo pint.tar.gz https://github.com/cloudflare/pint/releases/download/v0.24.0/pint-0.24.0-linux-x86_64.tar.gz
           tar -xf pint.tar.gz
