@@ -16,6 +16,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Debug
+        run:
+          env | grep GITHUB_
+
       - name: Run pint
         uses: prymitive/pint-action@v1
         with:
