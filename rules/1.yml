@@ -5,3 +5,6 @@ groups:
     expr: sum(foo)
   - record: broken
     expr: rate(foo[10m] > 0
+  - alert: foo
+    expr: bbb
+    for: 0m
