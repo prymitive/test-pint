@@ -1,4 +1,6 @@
-
 ci {
   include    = ["rules/.*"]
+}
+repository {
+  
 }
