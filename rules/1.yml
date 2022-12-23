@@ -5,8 +5,8 @@ groups:
     expr: sum(foo)
 
   - record: broken
-    expr: rate(foo[5m] > 0
+    expr: rate(foo[5m] / 0
 
   - alert: foo
-    expr: bbb
-    for: 0m
+    expr: ccc
+    for: 0s
