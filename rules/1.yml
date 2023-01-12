@@ -1,12 +1,12 @@
 groups:
 - name: test
   rules:
-  - record: foo
+  - alert: foo
     expr: sum(foo)
 
   - record: broken
-    expr: rate(foo[5m] > 0
+    expr: rate(foo[5m] / 0
 
   - alert: foo
-    expr: bbb
-    for: 0m
+    expr: ccc{xxx=1} > 0
+    for: 0s
