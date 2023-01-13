@@ -5,8 +5,8 @@ groups:
     expr: sum(foo)
 
   - record: broken
-    expr: rate(foo[5m] / 0
+    expr: rate(foo[5m]) / 0
 
   - alert: foo
-    expr: ccc{xxx=1} > 0
-    for: 0s
+    expr: ccc{xxx="1"} > 0
+    for: 0
