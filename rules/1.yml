@@ -7,8 +7,8 @@ groups:
     expr: sum(foo)
 
   - record: broken
-    expr: rate(foo[5m] > 0
+    expr: rate(foo[5m]) > 0
 
   - alert: foo
-    expr: bbb
-    for: 0s
+    expr: bbb > 0
+    for: 1s
