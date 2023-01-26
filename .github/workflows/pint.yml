@@ -24,3 +24,4 @@ jobs:
         with:
           token: ${{ github.token }}
           workdir: 'rules'
+          requireOwner: '1'
