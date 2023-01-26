@@ -1,3 +1,5 @@
+# pint file/owner bob
+
 groups:
 - name: test
   rules:
