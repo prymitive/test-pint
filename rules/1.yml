@@ -5,11 +5,11 @@ groups:
     expr: sum(foo)
 
   - alert: foo
-    expr: rate(foo[5m] > 0
+    expr: rate(foo[5m]) > 0
 
   - alert: foo
     expr: bbb
     for: 1m
     labels:
       foo: bar
-      bar: foo
+      bar: foofoo
