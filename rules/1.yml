@@ -9,4 +9,4 @@ groups:
 
   - alert: foo
     expr: bbb
-    for: 0m
+    for: 1m
