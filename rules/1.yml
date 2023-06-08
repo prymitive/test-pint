@@ -12,4 +12,4 @@ groups:
     for: 1m
     labels:
       foo: bar
-      bar: foo
+      bar: fooooo
