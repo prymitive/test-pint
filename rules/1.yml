@@ -4,7 +4,7 @@ groups:
   - record: foo
     expr: sum(foo)
 
-  - record: broken
+    foo: bar
     expr: rate(foo[5m] > 0
 
   - alert: foo
