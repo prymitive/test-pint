@@ -4,9 +4,12 @@ groups:
   - record: foo
     expr: sum(foo)
 
-    foo: bar
+  - alert: foo
     expr: rate(foo[5m] > 0
 
   - alert: foo
     expr: bbb
     for: 1m
+    labels:
+      foo: bar
+      bar: foo
