@@ -1,0 +1,5 @@
+groups:
+- name: test
+  rules:
+  - record: up:count
+    expr: count(up == 1)
