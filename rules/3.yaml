@@ -1,0 +1,11 @@
+groups:
+- name: example_alerts
+  rules:
+  - alert: HighCpuUsage
+    expr: |
+      avg by (instance) (
+        rate(node_cpu_seconds_total{mode!="idle"}[5m])
+      ) * 100 > 70
+    for: 5m
+    labels:
+      severity: critical
