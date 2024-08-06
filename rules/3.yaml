@@ -9,3 +9,11 @@ groups:
     for: 5m
     labels:
       severity: critical
+  - alert: HighCpuUsage
+    expr: |
+      sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100 > 60
+    for: 10
+    labels:
+      value: "{{ $value }}"
+    annotations:
+      summary: "{{ $value }}% cpu usage in {{ $labels.env }}"
