@@ -1,4 +1,4 @@
-ci {
+parser {
   include    = ["rules/.*"]
 }
 prometheus "demo" {
