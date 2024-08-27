@@ -7,7 +7,8 @@ prometheus "demo" {
 }
 rule {
   match {
-    kind = "alerting"
+    kind  = "alerting"
+    state = ["any"]
   }
 
   annotation "summary" {
