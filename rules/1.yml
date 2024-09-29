@@ -1,5 +1,6 @@
 groups:
 - name: test
+  extra: 4
   rules:
   - record: foo
     expr: sum(foo)
