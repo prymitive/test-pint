@@ -23,4 +23,5 @@ jobs:
         uses: prymitive/pint-action@v1.58.0
         with:
           token: ${{ github.token }}
-          workdir: 'rules'
+          workdir: rules
+          loglevel: debug
