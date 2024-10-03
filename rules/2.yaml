@@ -1,6 +1,6 @@
 groups:
 - name: test
-  interval: 2m
+  interval: second
   rules:
   - record: up:count
     expr: count(up == 1)
