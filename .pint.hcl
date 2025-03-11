@@ -2,7 +2,7 @@ parser {
   include    = ["rules/.*"]
 }
 prometheus "demo" {
-  uri = "https://prometheus.demo.do.prometheus.io"
+  uri = "https://prometheus.demo.prometheus.io"
   timeout = "1m"
 }
 rule {
