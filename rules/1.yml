@@ -9,7 +9,7 @@ groups:
 
   - alert: foo
     expr: (sum(vector(1)) by(instance) or vector(0)) / on(job) foo > 0
-    for: 0m
+    for: 0h
     labels:
       foo: bar
       bar: foo
