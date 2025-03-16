@@ -11,7 +11,7 @@ groups:
       severity: critical
   - alert: HighCpuUsage
     expr: |
-      sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100 > 60
+      sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100 > 70
     for: "0"
     annotations:
       summary: "{{ $value }}% cpu usage"
