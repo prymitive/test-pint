@@ -5,11 +5,11 @@ groups:
     expr: sum(foo)
 
   - alert: foo
-    expr: rate(foo[5m]) > 0 unless vector(0)
+    expr: rate(foo[2m]) > 0 unless vector(0)
 
   - alert: foo
     expr: (sum(vector(1)) by(instance) or vector(0)) / on(job) foo > 0
-    for: 0h
+    for: 0m
     labels:
       foo: bar
       bar: foo
